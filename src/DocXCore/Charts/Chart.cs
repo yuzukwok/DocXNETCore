@@ -125,6 +125,21 @@ namespace Novacode
 
         #endregion
 
+        #region Dtable
+        public DTable DTable { get; private set; }
+        /// <summary>
+        /// 21.2.2.54 dTable (Data Table)
+        ///This element specifies a data table.
+        /// </summary>
+        public void AddDTable()
+        {
+          
+            DTable = new DTable();
+            ChartRootXml.Element(XName.Get("plotArea", DocX.c.NamespaceName)).Add(DTable.Xml);
+        }
+
+        #endregion
+
         /// <summary>
         /// Get or set 3D view for this chart
         /// </summary>
